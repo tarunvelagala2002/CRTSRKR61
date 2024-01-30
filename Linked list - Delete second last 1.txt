@@ -1,0 +1,75 @@
+Linked list - Delete second last 1:
+
+Write a Program to delete the second last element from the list. If deletion of second last element is not possible, print "Deletion of second last element is not possible", Otherwise print the list after deleting the second last element.
+
+Input Format
+
+Read elements upto -1
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+print output
+
+Sample Input 0
+
+1
+2
+3
+4
+-1
+Sample Output 0
+
+Before deleting:
+1 2 3 4
+After deleting:
+1 2 4
+Sample Input 1
+
+23
+34
+55
+12
+66
+45
+33
+-1
+Sample Output 1
+
+Before deleting:
+23 34 55 12 66 45 33
+After deleting:
+23 34 55 12 66 33
+
+code:
+
+def delete_second_last(lst):
+    if len(lst) >= 2:
+        second_last_element = lst[-2]
+        lst.remove(second_last_element)
+        return True
+    else:
+        return False
+
+input_list = []
+while True:
+    num = int(input())
+    if num == -1:
+        break
+    input_list.append(num)
+print("Before deleting:")
+print(" ".join(map(str, input_list)))
+
+deleted = delete_second_last(input_list)
+
+if deleted:
+    print("After deleting:")
+    print(" ".join(map(str, input_list)))
+else:
+    print("Deletion of second last element is not possible")
+
+    
+
