@@ -1,0 +1,57 @@
+Linked list - find maximum element in linked list 1:
+
+Write a Program to find the maximum number in a list.
+
+Input Format
+
+Read elements upto -1
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+print output
+
+Sample Input 0
+
+1
+5
+2
+4
+7
+3
+-1
+Sample Output 0
+
+7
+Sample Input 1
+
+6
+3
+8
+2
+9
+1
+6
+10
+-1
+Sample Output 1
+
+10
+
+code:
+numbers = []
+
+while True:
+    value = int(input())
+    if value < 0:
+        break
+    numbers.append(value)
+
+if not numbers:
+    print("List is empty")
+else:
+    max_number = max(numbers)
+    print(max_number)
