@@ -1,0 +1,77 @@
+Delete Duplicates 5:
+
+Write a Program to delete the duplicate elements from the given list.
+
+Input Format
+
+Read elements upto -1
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+print output
+
+Sample Input 0
+
+1
+2
+3
+4
+3
+2
+-1
+Sample Output 0
+
+Linked list before removal of duplicates
+1
+2
+3
+4
+3
+2
+Linked list after removal of duplicates
+1
+2
+3
+4
+Sample Input 1
+
+1
+1
+2
+2
+3
+3
+-1
+Sample Output 1
+
+Linked list before removal of duplicates
+1
+1
+2
+2
+3
+3
+Linked list after removal of duplicates
+1
+2
+3
+
+code:
+input_list = []
+while True:
+    num = int(input())
+    if num < 0:
+        break
+    input_list.append(num)
+print("Linked list before removal of duplicates")
+print("\n".join(map(str, input_list)))
+unique_list = list(set(input_list))
+print("Linked list after removal of duplicates")
+print("\n".join(map(str, unique_list)))
+
+
+​
