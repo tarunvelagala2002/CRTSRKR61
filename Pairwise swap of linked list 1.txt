@@ -48,44 +48,43 @@ Sample Output 1
 5
 
 code:
-
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
-def swap_pairwise(head):
-    current = head
+    def swap_pairs(head):
+        current = head
+
     while current is not None and current.next is not None:
         current.data, current.next.data = current.next.data, current.data
         current = current.next.next
 
-def print_linked_list(head):
-    current = head
-    
-    while current is not None:
-        print(current.data)
-        current = current.next
+    def print_list(head):
+        current = head
+        while current is not None:
+            print(current.data)
+            current=current.next
+         
+    def create_linked_list():
+        head = None
+        current = None
 
-head = None
-tail = None
-while True:
-    num = int(input())
-    if num < 0:
-        break
-    new_node = Node(num)
-    if head is None:
-        head = new_node
-        tail = new_node
-    else:
-        tail.next = new_node
-        tail = new_node
-        
-print("Linked list before swapping pairwise:")
-print_linked_list(head)
+        while True:
+            data = int(input())
+            if data < 0:
+                break
+            if head is None:
+                head = Node(data)
+                current = head
+            else:
+                current.next = Node(data)
+                current = current.next
+        return head
 
-swap_pairwise(head)
-
-print("Linked list after swapping pairwise:")
-print_linked_list(head)
-
+if __name__ == "__main__":
+    print("Enter numbers (enter a negative value to stop):")
+    head = create_linked_list()
+    swap_pairs(head)
+    print("Swapped elements pairwise:")
+    print_list(head)
