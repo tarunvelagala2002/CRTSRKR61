@@ -42,16 +42,43 @@ Sample Output 1
 10
 
 code:
-numbers = []
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-while True:
-    value = int(input())
-    if value < 0:
-        break
-    numbers.append(value)
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-if not numbers:
-    print("List is empty")
-else:
-    max_number = max(numbers)
-    print(max_number)
+    def insert(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def find_max_number(self):
+        if not self.head:
+            return None
+
+        max_number = self.head.data
+        current = self.head.next
+
+        while current:
+            if current.data > max_number:
+                max_number = current.data
+            current = current.next
+
+        return max_number
+
+def read_elements_until_minus_one():
+    linked_list = LinkedList()
+    while True:
+        num = int(input())
+        if num == -1:
+            break
+        linked_list.insert(num)
+    return linked_list
+
+linked_list = read_elements_until_minus_one()
+result = linked_list.find_max_number()
+print(result)
